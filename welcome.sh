@@ -1,0 +1,2 @@
+#!/bin/bash -x
+echo "welcome to flip coin simulation problem"
