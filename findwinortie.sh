@@ -3,7 +3,7 @@
 heads=0
 tails=0
  
-for (( i=0;i<50;i++ ))
+for (( i=0;i<42;i++ ))
 do
 if [ $((RANDOM%2)) -eq 1 ]
 then
@@ -11,18 +11,17 @@ then
 else
     tails=$(($tails+1))
 fi
+done
+
 
 if [ $heads -eq 21 ]
 then
-     winner="heads"
-     margin=$(($heads-$tails))
-     break
-fi
-if [ $tails -eq 21 ]
+     winner="TIE GAME"
+elif [ $heads -gt $tails ]
 then
-    winner="tails"
-    margin=$(($tails-$heads))
-    break
+     winner="HEADS"
+     margin=$(($heads-$tails))
+else
+     winner="TAILS"
+     margin=$(($tails-$heads))
 fi
-
-done
